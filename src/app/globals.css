@@ -1,0 +1,146 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  /* Brass & Blade barbershop palette */
+  --radius: 0.25rem;
+
+  /* Backgrounds — warm cream tones */
+  --background: #fbf6ec;
+  --foreground: #1b2028;
+  --card: #ffffff;
+  --card-foreground: #1b2028;
+  --popover: #ffffff;
+  --popover-foreground: #1b2028;
+
+  /* Primary — deep brass/copper */
+  --primary: #b5732a;
+  --primary-foreground: #fbf6ec;
+
+  /* Secondary — soft tan */
+  --secondary: #eae1ce;
+  --secondary-foreground: #2a3038;
+
+  /* Muted — neutral cream */
+  --muted: #f4ecdb;
+  --muted-foreground: #6a7282;
+
+  /* Accent — bright brass */
+  --accent: #d29951;
+  --accent-foreground: #1b2028;
+
+  --destructive: #9f0712;
+  --border: #ddd2bc;
+  --input: #ddd2bc;
+  --ring: #d29951;
+
+  --chart-1: #b5732a;
+  --chart-2: #6b5840;
+  --chart-3: #d29951;
+  --chart-4: #a89c84;
+  --chart-5: #5c5346;
+
+  --sidebar: #efe7d5;
+  --sidebar-foreground: #1b2028;
+  --sidebar-primary: #b5732a;
+  --sidebar-primary-foreground: #fbf6ec;
+  --sidebar-accent: #eae1ce;
+  --sidebar-accent-foreground: #1b2028;
+  --sidebar-border: #ddd2bc;
+  --sidebar-ring: #d29951;
+}
+
+.dark {
+  --background: #0e1117;
+  --foreground: #fbf6ec;
+  --card: #1b2028;
+  --card-foreground: #fbf6ec;
+  --popover: #1b2028;
+  --popover-foreground: #fbf6ec;
+  --primary: #d29951;
+  --primary-foreground: #0e1117;
+  --secondary: #2a3038;
+  --secondary-foreground: #fbf6ec;
+  --muted: #2d3340;
+  --muted-foreground: #a89c84;
+  --accent: #b5732a;
+  --accent-foreground: #fbf6ec;
+  --destructive: #e40014;
+  --border: #2d3340;
+  --input: #2d3340;
+  --ring: #d29951;
+  --chart-1: #d29951;
+  --chart-2: #a89c84;
+  --chart-3: #b5732a;
+  --chart-4: #6b5840;
+  --chart-5: #5c5346;
+  --sidebar: #1b2028;
+  --sidebar-foreground: #fbf6ec;
+  --sidebar-primary: #d29951;
+  --sidebar-primary-foreground: #0e1117;
+  --sidebar-accent: #2a3038;
+  --sidebar-accent-foreground: #fbf6ec;
+  --sidebar-border: #2d3340;
+  --sidebar-ring: #d29951;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), Georgia, serif;
+  }
+}
+
+/* Smooth scroll for in-page navigation */
+html {
+  scroll-behavior: smooth;
+}
