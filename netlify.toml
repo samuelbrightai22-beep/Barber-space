@@ -1,10 +1,14 @@
 [build]
-  command = "bun run build"
+  command = "npm run build"
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20"
   NEXT_TELEMETRY_DISABLED = "1"
+  NPM_FLAGS = "--legacy-peer-deps"
 
-[[plugins]]
-  plugin = "@netlify/plugin-nextjs"
+# NOTE: Do NOT add `[[plugins]]` for @netlify/plugin-nextjs here.
+# Netlify's Next.js Runtime is auto-detected when Next.js is present,
+# and manually declaring the plugin in package.json + netlify.toml
+# causes "Initializing - Failed" deploy errors. See:
+# https://docs.netlify.com/integrations/frameworks/next-js/overview/
