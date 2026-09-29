@@ -1,9 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // `standalone` works on Vercel, Netlify (with @netlify/plugin-nextjs), and
-  // any Node host. It also keeps the z.ai sandbox happy.
-  output: "standalone",
+  // NOTE: do NOT set `output: "standalone"` here.
+  // - z.ai sandbox uses `next dev`, which ignores `output`.
+  // - Netlify's `@netlify/plugin-nextjs` plugin docs explicitly warn that
+  //   `output: "standalone"` can cause issues with their runtime.
+  // - Vercel doesn't need it either.
+  // If you ever want a self-contained Node build (Docker/VM), run
+  // `bun run build:standalone` after temporarily setting it here.
   typescript: {
     ignoreBuildErrors: true,
   },
