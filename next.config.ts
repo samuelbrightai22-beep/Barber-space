@@ -13,6 +13,10 @@ const nextConfig: NextConfig = {
     // If you later load images from external domains, add them here:
     // remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }],
   },
+  // Allow the z.ai sandbox preview host to hit the Next.js dev server without
+  // triggering cross-origin warnings. This is dev-only and has zero effect on
+  // production builds (Vercel / Netlify).
+  allowedDevOrigins: ["*.space-z.ai"],
 };
 
 export default nextConfig;
